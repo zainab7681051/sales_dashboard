@@ -1,7 +1,7 @@
 <script setup>
   import searchbar from "./searchbar.vue"
-  import locale from "./locale.vue"
-  import userInfo from "./userInfo.vue"
+  import languages from "./languages.vue"
+  import menu from "./menu.vue"
 
 </script>
 
@@ -13,13 +13,13 @@
     <div class="searchbar-container">
       <searchbar/>
     </div>
-    <!-- locale -->
-    <div class="locale-container">
-      <locale/>
+    <!-- languages -->
+    <div class="languages-container">
+      <languages/>
     </div>
-    <!-- bell+userInfo -->
-    <div class="userInfo-container">
-      <userInfo/>
+    <!-- bell+menu -->
+    <div class="menu-container">
+      <menu/>
     </div>
   </div>
 </template>
