@@ -1,12 +1,24 @@
 <script setup>
 	import {reactive,ref,computed} from "vue"
-	import united from "../assets/united.svg"
+	import us from "../assets/united-states.png"
+	import uk from "../assets/uk.png"
+	import iraq from "../assets/iraq.png"
+	import turkey from "../assets/turkey.png"
+	import germany from "../assets/germany.png"
+	import france from "../assets/france.png"
+	import china from "../assets/china.png"
+	import japan from "../assets/japan.png"
 	import downArrow from "../assets/arrow-down.svg"
+
 	const langList=reactive([
-		{id:1,flag:united, locale:"eng (us)", active: true},
-		{id:2,flag:united, locale:"eng (uk)", active: false},
-		{id:3,flag:united, locale:"ar (iq)", active: false},
-		{id:4,flag:united, locale:"krd (iq)", active: false}
+		{id:1,flag:us, locale:{language:"eng", region:"us"}, active: true},
+		{id:2,flag:uk, locale:{language:"eng", region:"uk"}, active: false},
+		{id:3,flag:iraq, locale:{language:"ar", region:"iq"}, active: false},
+		{id:4,flag:turkey, locale:{language:"tr", region:"tr"}, active: false},
+		{id:5,flag:germany, locale:{language:"de", region:"de"}, active: false},
+		{id:6,flag:france, locale:{language:"fr", region:"fr"}, active: false},
+		{id:7,flag:china, locale:{language:"zh", region:"ch"}, active: false},
+		{id:8,flag:japan, locale:{language:"ja", region:"jp"}, active: false}
 	])
 	let currentLang=reactive({
 		flag:langList[0].flag, 
@@ -36,7 +48,10 @@
 	@mouseenter="isHovered=true"
 	@mouseleave="isHovered=false">
 		<div class="flag"><img :src="currentLang.flag"></div>
-		<div class="locale poppins-semibold">{{currentLang.locale}}</div>
+		<div class="locale poppins-semibold">
+			<span class="locale-language">{{currentLang.locale.language}}</span> 
+			<span class="locale-region">&nbsp;({{currentLang.locale.region}})</span> 
+		</div>
 		<div class="down-arrow" :class="{rotate180:isHovered}"><img :src="downArrow"></div>
 	</div>
 
@@ -46,7 +61,10 @@
 		<div class="language" v-for="lang in langListDropdown" :key="lang.locale" 
 		@click="change_lang(lang)">
 			<div class="flag"><img :src="lang.flag"></div>
-			<div class="locale poppins-semibold">{{lang.locale}}</div>
+			<div class="locale poppins-semibold">
+				<span class="locale-language">{{lang.locale.language}}</span> 
+			<span class="locale-region">&nbsp;({{lang.locale.region}})</span>
+			</div>
 		</div>
 	</div>
   </div>
@@ -67,8 +85,13 @@
 	}
 	.locale{
 		margin-right: 8px;
-		text-transform: uppercase;
 		color: var(--secondary);
+	}
+	.locale-language{
+		text-transform: capitalize;
+	}
+	.locale-region{
+		text-transform: uppercase;
 	}
 	.lang-list-container{
 		position: absolute;
@@ -76,13 +99,13 @@
 		z-index: 10;
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
+		gap: 15px;
 		padding: 10px 0px;
-		transform: translateY(-10%);
+		top: -50px;
 		opacity: 0;
 		visibility: hidden;
 		cursor: pointer;
-		transition: all .1s ease;
+		transition: all .2s ease;
 	}
 	.language{
 		display: flex;
@@ -95,7 +118,7 @@
 	.lang-list-container:hover{
 		opacity: 1;
 		visibility: visible;
-		transform: translateY(40%);
+		top: 50px;
 	}
 	.rotate180{
 		transform: rotate(180deg);
