@@ -2,7 +2,7 @@
 import logo from "../assets/dummy logo.png"
 </script>
 <template>
-  <div class="side-title-container">
+  <div class="side-title-container poppins-semibold">
     <img :src="logo">
     <p>Dabang</p>
   </div>

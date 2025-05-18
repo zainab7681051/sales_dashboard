@@ -36,7 +36,7 @@
 	@mouseenter="isHovered=true"
 	@mouseleave="isHovered=false">
 		<div class="flag"><img :src="currentLang.flag"></div>
-		<div class="locale">{{currentLang.locale}}</div>
+		<div class="locale poppins-semibold">{{currentLang.locale}}</div>
 		<div class="down-arrow" :class="{rotate180:isHovered}"><img :src="downArrow"></div>
 	</div>
 
@@ -46,7 +46,7 @@
 		<div class="language" v-for="lang in langListDropdown" :key="lang.locale" 
 		@click="change_lang(lang)">
 			<div class="flag"><img :src="lang.flag"></div>
-			<div class="locale">{{lang.locale}}</div>
+			<div class="locale poppins-semibold">{{lang.locale}}</div>
 		</div>
 	</div>
   </div>
@@ -68,17 +68,16 @@
 	.locale{
 		margin-right: 8px;
 		text-transform: uppercase;
+		color: var(--secondary);
 	}
 	.lang-list-container{
 		position: absolute;
-/*		display: none;*/
-		background-color: var(--secondary);
 		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 		z-index: 10;
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
-		padding: 10px;
+		padding: 10px 0px;
 		transform: translateY(-10%);
 		opacity: 0;
 		visibility: hidden;
@@ -87,6 +86,7 @@
 	}
 	.language{
 		display: flex;
+		padding: 0 10px;
 	}
 	.language:hover{
 		background-color:rgba(0, 0, 0, 0.1);

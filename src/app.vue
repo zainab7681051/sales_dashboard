@@ -6,7 +6,7 @@ import mainTopbar from "./components/mainTopbar.vue"
 </script>
 
 <template>
-  <div class="layout">
+  <div class="layout poppins-regular">
     <aside>
       <sidebarView/>
     </aside>

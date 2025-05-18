@@ -12,7 +12,8 @@
 		  v-model="query"
 		  placeholder="Search here..."
 		  class="query-field"
-		  @focus="isFocus = !isFocus"
+		  @focus="isFocus = true"
+		  @blur="isFocus = false"
 		/>
 	</div>
 </template>
@@ -28,7 +29,7 @@
 }
 .query-field::placeholder{
 	color: var(--secondary);
-	opacity: .5;
+	opacity: .8;
 }
 .query-field:focus-visible{
 	border-style: none;

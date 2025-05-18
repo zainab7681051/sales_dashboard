@@ -8,7 +8,7 @@
 <template>
   <div class="topbar-container">
     <!-- maintitle -->
-    <div class="main-title">{{$route.name}}</div>
+    <div class="main-title poppins-semibold">{{$route.name}}</div>
     <!-- search bar -->
     <div class="searchbar-container">
       <searchbar/>
@@ -32,5 +32,6 @@
 .main-title{
   text-transform: capitalize;
   font-size: 32px;
+  margin-right: 5px;
 }
 </style>
