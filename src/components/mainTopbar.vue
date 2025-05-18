@@ -1,7 +1,7 @@
 <script setup>
   import searchbar from "./searchbar.vue"
   import languages from "./languages.vue"
-  import menu from "./menu.vue"
+  import userMenu from "./userMenu.vue"
 
 </script>
 
@@ -17,9 +17,9 @@
     <div class="languages-container">
       <languages/>
     </div>
-    <!-- bell+menu -->
-    <div class="menu-container">
-      <menu/>
+    <!-- bell+userMenu -->
+    <div class="userMenu-container">
+      <userMenu/>
     </div>
   </div>
 </template>
@@ -27,9 +27,10 @@
 <style lang="css" scoped>
 .topbar-container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .main-title{
   text-transform: capitalize;
+  font-size: 32px;
 }
 </style>
