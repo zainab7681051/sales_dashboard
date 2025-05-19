@@ -1,5 +1,6 @@
 <script setup>
   import titleComponent from "./titleComponent.vue"
+  
   defineProps({
   icon: String,
   value: String,

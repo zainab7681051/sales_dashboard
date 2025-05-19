@@ -8,6 +8,8 @@ import salesIcon from "../assets/sales_icon.png"
 import orderIcon from "../assets/order_icon.png"
 import productsIcon from "../assets/products_icon.png"
 import customerIcon from "../assets/customer_icon.png"
+import chartCompononent from "../components/chartComponent.vue"
+import {chartsData} from "../data/chartsData.js"
 
 const salesSummary=reactive([
   {icon:salesIcon, value: "$1K", title:"total sales", subtitle:"+8% from yesterday", bgColor:"#FFE2E5"},
@@ -16,6 +18,21 @@ const salesSummary=reactive([
   {icon:customerIcon, value: "8", title:"new customers", subtitle:"0,5% from yesterday", bgColor:"#F3E8FF"},
 ])
 
+const handleExport = () => {
+  return null
+}
+
+// const chartsData = reactive([
+//   {id:1, title:"visistor insights", type:"", series:"", options:"", height:""},
+//   {id:2, title:"total revenue", type:"", series:"", options:"", height:""},
+//   {id:3, title:"customer satisfaction", type:"", series:"", options:"", height:""},
+//   {id:4, title:"target vs reality", type:"", series:"", options:"", height:""},
+//   {id:5, title:"top products", type:"", series:"", options:"", height:""},
+//   {id:6, title:"sales mapping by country", type:"", series:"", options:"", height:""},
+//   {id:7, title:"volume vs service level", type:"", series:"", options:"", height:""},
+// ])
+
+  const Data = reactive(chartsData)
 </script>
 
 <template>
@@ -23,7 +40,7 @@ const salesSummary=reactive([
     <div class="sales-summary">
       <div class="sales-summary-heading">
        <titleComponent :title="`today's sales`" :subtitle="`sales summary`"/>
-        <buttonComponent :value="'export'" :icon="exportIcon" />
+        <buttonComponent :value="'export'" :icon="exportIcon" @click="handleExport()"/>
       </div>
       <div class="sales-summary-body">
         <summaryCard 
@@ -35,7 +52,15 @@ const salesSummary=reactive([
         :bgColor="card.bgColor"/>
       </div>
     </div>
-  <!-- charts -->
+    <!-- charts -->
+      <chartCompononent
+      v-for="chart in Data"
+      :key="chart.id"
+      :title="chart.title"
+      :type="chart.type"
+      :series="chart.series"
+      :options="chart.options"
+      :height="chart.height"/>
   </div>
 </template>
 
@@ -46,6 +71,7 @@ const salesSummary=reactive([
     gap: 21px;
     padding: 48px 0 0 16px;
     text-transform: capitalize;
+    align-items: baseline;
   }
   .sales-summary{
     display: flex;
@@ -61,12 +87,11 @@ const salesSummary=reactive([
     align-items: center;
     gap: 5px;
   }
-  .sales-summary-body{
+  .sales-summary-body,
+  .charts-container{
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
     margin-top: 10px;
-    cursor: pointer;
   }
-
 </style>
