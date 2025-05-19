@@ -105,6 +105,7 @@ let isHovered = ref(false)
   opacity: 0;
   visibility: hidden;
   cursor: pointer;
+  background-color: white;
   transition: all .2s ease;
 }
 

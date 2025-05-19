@@ -1,5 +1,21 @@
 <script setup>
+import { reactive } from "vue"
 import titleComponent from "../components/titleComponent.vue"
+import exportIcon from "../assets/Export Icon.svg"
+import buttonComponent from "../components/buttonComponent.vue"
+import summaryCard from "../components/summaryCard.vue"
+import salesIcon from "../assets/sales_icon.png"
+import orderIcon from "../assets/order_icon.png"
+import productsIcon from "../assets/products_icon.png"
+import customerIcon from "../assets/customer_icon.png"
+
+const salesSummary=reactive([
+  {icon:salesIcon, value: "$1K", title:"total sales", subtitle:"+8% from yesterday", bgColor:"#FFE2E5"},
+  {icon:orderIcon, value: "300", title:"total order", subtitle:"+5% from yesterday", bgColor:"#FFF4DE"},
+  {icon:productsIcon, value: "5", title:"products sold", subtitle:"+1,2% from yesterday", bgColor:"#DCFCE7"},
+  {icon:customerIcon, value: "8", title:"new customers", subtitle:"0,5% from yesterday", bgColor:"#F3E8FF"},
+])
+
 </script>
 
 <template>
@@ -7,24 +23,20 @@ import titleComponent from "../components/titleComponent.vue"
     <div class="sales-summary">
       <div class="sales-summary-heading">
        <titleComponent :title="`today's sales`" :subtitle="`sales summary`"/>
-        <!-- <buttonComponent :value="export" :icon="exportIcon" /> -->
+        <buttonComponent :value="'export'" :icon="exportIcon" />
       </div>
       <div class="sales-summary-body">
-        
+        <summaryCard 
+        v-for="card in salesSummary" 
+        :icon="card.icon" 
+        :value="card.value" 
+        :title="card.title" 
+        :subtitle="card.subtitle"
+        :bgColor="card.bgColor"/>
       </div>
     </div>
-  </div>
-<!--   titleComponent
-  subTitleComponent
-  buttonComponent -->
-  
-  <!-- v-for summaryCard
-      accepts a icon
-      a value
-      a title
-      changetext
-   -->
   <!-- charts -->
+  </div>
 </template>
 
 <style lang="css">
@@ -39,10 +51,22 @@ import titleComponent from "../components/titleComponent.vue"
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     padding: 32px;
+     border-radius: 16px;
   }
   .sales-summary-heading{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  .sales-summary-body{
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    cursor: pointer;
   }
 
 </style>

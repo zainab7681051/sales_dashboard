@@ -9,6 +9,8 @@
 :root{
   --primary:#5D5FEF;
   --secondary:#737791;
+  --dark-blue:#0F3659;
+  --light-blue: #C3D3E2;
 }
 
 html, body {
@@ -145,4 +147,8 @@ p, h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-style: italic;
+}
+
+body{
+  color: #0F3659;
 }

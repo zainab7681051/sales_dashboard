@@ -9,8 +9,8 @@
 
 <template>
   <div class="title-component-container">
-    <h1 class="poppins-semibold" :style="titleFontSize>0 ? `font-size:${titleFontSize}`:''">{{title}}</h1>
-    <h2 class="poppins-light" :style="subtitleFontSize>0 ? `font-size:${subtitleFontSize}`:''">{{subtitle}}</h2>
+    <h1 class="poppins-semibold" :style="titleFontSize>0 ? `font-size:${titleFontSize}px`:''">{{title}}</h1>
+    <h2 class="poppins-light" :style="subtitleFontSize>0 ? `font-size:${subtitleFontSize}px`:''">{{subtitle}}</h2>
    </div>
 </template>
 
