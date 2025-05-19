@@ -1,8 +1,10 @@
 <script setup>
+
 </script>
 
 <template>
-	<!-- charts -->
+  <!-- salesSummary -->
+  <!-- charts -->
 </template>
 
 <style lang="css"></style>

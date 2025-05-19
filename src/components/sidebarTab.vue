@@ -13,25 +13,32 @@ defineProps({
 </template>
 <style lang="css" scoped>
 .tab {
-    display: flex;
-    padding: 12px 20px;
-    text-decoration: none;
-    color: var(--secondary);
-    border-radius: 16px;
-    transition: all .3s ease;
+  display: flex;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: var(--secondary);
+  border-radius: 16px;
+  transition: all .3s ease;
 }
+
+.tab:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
 .tab-icon {
   margin-right: 32px;
 }
+
 .tab-label {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-.router-link-active.router-link-exact-active.tab{
+.router-link-active.router-link-exact-active.tab {
   background-color: var(--primary);
   color: white;
 }
-.router-link-active.router-link-exact-active.tab .tab-icon{
+
+.router-link-active.router-link-exact-active.tab .tab-icon {
   filter: grayscale(100%) brightness(0) invert(1);
 }
 </style>

@@ -1,35 +1,36 @@
 <script setup>
-  import searchbar from "./searchbar.vue"
-  import languages from "./languages.vue"
-  import userMenu from "./userMenu.vue"
+import searchbar from "./searchbar.vue"
+import languages from "./languages.vue"
+import userMenu from "./userMenu.vue"
 
 </script>
 
 <template>
   <div class="topbar-container">
     <!-- maintitle -->
-    <div class="main-title poppins-semibold">{{$route.name}}</div>
+    <div class="main-title poppins-semibold">{{ $route.name }}</div>
     <!-- search bar -->
     <div class="searchbar-container">
-      <searchbar/>
+      <searchbar />
     </div>
     <!-- languages -->
     <div class="languages-container">
-      <languages/>
+      <languages />
     </div>
     <!-- bell+userMenu -->
     <div class="userMenu-container">
-      <userMenu/>
+      <userMenu />
     </div>
   </div>
 </template>
 
 <style lang="css" scoped>
-.topbar-container{
+.topbar-container {
   display: flex;
   justify-content: space-around;
 }
-.main-title{
+
+.main-title {
   text-transform: capitalize;
   font-size: 32px;
   margin-right: 5px;

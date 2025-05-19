@@ -2,19 +2,18 @@
 import dashboardView from "./views/dashboardView.vue"
 import sidebarView from "./views/sidebarView.vue"
 import mainTopbar from "./components/mainTopbar.vue"
-
 </script>
 
 <template>
   <div class="layout poppins-regular">
     <aside>
-      <sidebarView/>
+      <sidebarView />
     </aside>
     <main>
       <header>
-        <mainTopbar/>
+        <mainTopbar />
       </header>
-      <router-view/>
+      <router-view />
     </main>
   </div>
 </template>
@@ -23,18 +22,21 @@ import mainTopbar from "./components/mainTopbar.vue"
 .layout {
   display: grid;
   grid-template-columns: 25% 1fr;
-  height: 100vh;  
+  height: 100vh;
 }
+
 main {
   display: flex;
   flex-direction: column;
 }
+
 aside {
-    display: flex;
-    flex-direction: column;
-    padding: 20px 25px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 25px;
 }
-header{
+
+header {
   padding: 12px 5px;
 }
 </style>
