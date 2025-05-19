@@ -60,7 +60,8 @@ const handleExport = () => {
       :type="chart.type"
       :series="chart.series"
       :options="chart.options"
-      :height="chart.height"/>
+      :height="chart.height"
+      :width="chart.width"/>
   </div>
 </template>
 
@@ -87,11 +88,14 @@ const handleExport = () => {
     align-items: center;
     gap: 5px;
   }
-  .sales-summary-body,
-  .charts-container{
+  .sales-summary-body{
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
     margin-top: 10px;
+  }
+/*  development*/
+  .dashboard-container{
+    flex-direction: column-reverse;
   }
 </style>

@@ -6,7 +6,8 @@ const props = defineProps({
   type: String,
   series: Array, 
   options: Object,
-  height: [String, Number]
+  height: [String, Number],
+  width: [String, Number]
 });
 </script>
 
@@ -19,6 +20,7 @@ const props = defineProps({
         :options="options"
         :series="series"
         :height="height"
+        :width="width"
       ></apexchart>
     </div>
   </div>
@@ -30,7 +32,6 @@ const props = defineProps({
     gap: 16px;
     padding-top: 32px;
     height: 310px;
-    width: 420px;
   }
   .chart{
     min-height: 100%;
