@@ -29,11 +29,12 @@ const tabs = reactive([
     <sidebarTab v-for="item in tabs" :key="item.label" :icon="item.icon" :label="item.label" :path="item.path"/>
   </div>
 </template>
-
+    
 <style lang="css">
 .sidebar-tabs-container{
-      display: flex;
+    display: flex;
     flex-direction: column;
-    padding: 0px 12% 0 15%;
+    padding: 0px 8% 0 15%;
+    gap:15px;
 }
 </style>
