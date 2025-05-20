@@ -78,6 +78,9 @@ const volume_services_level = [
     data: get_rand_array(6, 635, 1135)
   }
 ]
+// ISO-2 country codes
+const countries = ['US', 'BR', 'SA', 'ID', 'CN', 'CD']
+
 export const chartsData = [
   {
     id: 1,
@@ -339,9 +342,17 @@ export const chartsData = [
     height: "100%",
     width: 400
   },
-
   {
     id: 6,
+    title: "sales mapping by country",
+    type: 'map',
+    series: countries,
+    options: {
+      colors:[YELLOW, RED, BLUE, GREEN, PURPLE] 
+    }
+  },
+  {
+    id: 7,
     title: "volume vs services level",
     type: "bar",
     series: [
