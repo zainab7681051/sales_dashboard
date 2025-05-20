@@ -16,6 +16,8 @@ function get_rand_array(length, min, max) {
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 const months_half = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
+const products = ["Home Decor Range", "Disney Princess Pink Bag", "Bathroom Essentials", "Apple Smartwatches"]
+
 const vistor_insights = [
 	{
       name: "Loyal Customers",
@@ -58,6 +60,22 @@ const target_vs_reality= [
   {
     name: "Target Sales",
     data: get_rand_array(7, 40,80)
+  }
+]
+const top_products =[
+  {
+  name: "top products",
+  data: get_rand_array(4, 12, 50) 
+  }
+]
+const volume_services_level = [
+  {
+    name: "Volume",
+    data: get_rand_array(6, 420, 635)
+  },
+  {
+    name: "Services",
+    data: get_rand_array(6, 635, 1135)
   }
 ]
 export const chartsData = [
@@ -275,11 +293,10 @@ export const chartsData = [
   },
   {
     id: 5,
-    title: "target vs reality",
+    title: "top products",
     type: "bar",
     series: [
-      target_vs_reality[0],
-      target_vs_reality[1]
+      top_products[0],
     ],
     options: {
       chart: { 
@@ -289,14 +306,24 @@ export const chartsData = [
       },
       plotOptions: {
         bar: {
-          horizontal: true
+          horizontal: true,
+          borderRadius: 5,
+          barHeight:'15%',
+          distributed: true,
+          colors:{
+            backgroundBarColors: [BLUE, CYAN, PURPLE, YELLOW],
+            backgroundBarOpacity: 0.3,
+          }
         }
       },
       grid:{
         show:false
       },
-      dataLabels: { enabled: false },
+      dataLabels: {
+          enabled: false,
+        },  
        xaxis: {
+        categories: products,
         labels:{
           show: false
         }
@@ -310,6 +337,50 @@ export const chartsData = [
       },
     },
     height: "100%",
-    width: 600
+    width: 400
+  },
+
+  {
+    id: 6,
+    title: "volume vs services level",
+    type: "bar",
+    series: [
+      volume_services_level[0],
+      volume_services_level[1]
+    ],
+    options: {
+      chart: { 
+        zoom: { enabled: false }, 
+        toolbar:{ show: false }, 
+        fontFamily: "Poppins",
+        stacked: true
+      },
+      plotOptions: {
+        bar: {
+          columnWidth:'25%',
+        }
+      },
+      grid:{
+        show:false
+      },
+      dataLabels: { enabled: false },
+      xaxis: {
+        labels:{
+            show:false
+        }
+      }, 
+      yaxis: {
+        show: false
+      },
+      stroke: { curve: "smooth" },
+      colors: [BLUE, CYAN],
+      legend: {
+          markers: {
+            shape:"circle"
+        }
+      }
+    },
+    height: "100%",
+    width: 420
   },
 ]

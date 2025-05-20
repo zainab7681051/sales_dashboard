@@ -22,16 +22,6 @@ const handleExport = () => {
   return null
 }
 
-// const chartsData = reactive([
-//   {id:1, title:"visistor insights", type:"", series:"", options:"", height:""},
-//   {id:2, title:"total revenue", type:"", series:"", options:"", height:""},
-//   {id:3, title:"customer satisfaction", type:"", series:"", options:"", height:""},
-//   {id:4, title:"target vs reality", type:"", series:"", options:"", height:""},
-//   {id:5, title:"top products", type:"", series:"", options:"", height:""},
-//   {id:6, title:"sales mapping by country", type:"", series:"", options:"", height:""},
-//   {id:7, title:"volume vs service level", type:"", series:"", options:"", height:""},
-// ])
-
   const Data = reactive(chartsData)
 </script>
 
@@ -56,6 +46,7 @@ const handleExport = () => {
       <chartCompononent
       v-for="chart in Data"
       :key="chart.id"
+      :id="chart.id"
       :title="chart.title"
       :type="chart.type"
       :series="chart.series"

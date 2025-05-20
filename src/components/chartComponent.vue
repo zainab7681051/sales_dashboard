@@ -2,6 +2,7 @@
   import titleComponent from "./titleComponent.vue"
 
 const props = defineProps({
+  id: Number,
   title:String,
   type: String,
   series: Array, 
@@ -27,6 +28,7 @@ const props = defineProps({
 </template>
 <style>
   .chart-container{
+    margin-top: 1%;
     display: flex;
     flex-direction: column;
     gap: 16px;
