@@ -1,9 +1,13 @@
+import ovalBlue from "../assets/oval_blue.png"
+import ovalCyan from "../assets/oval_cyan.png"
+
 const RED="#F64E60"
 const GREEN="#3CD856"
+const GREEN1 = "#27AE60"
 const PURPLE="#8950FC"
 const BLUE="#0095FF"
 const CYAN="#00E096"
-const YELLOW= ""
+const YELLOW= "#FFA412"
 
 function get_rand_array(length, min, max) {
   return Array.from({ length }, () =>
@@ -11,7 +15,7 @@ function get_rand_array(length, min, max) {
 }
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 const week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-
+const months_half = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul']
 const vistor_insights = [
 	{
       name: "Loyal Customers",
@@ -46,7 +50,16 @@ const customer_satisfaction = [
 		data: get_rand_array(7, 400, 800)
 	}
 ]
-
+const target_vs_reality= [
+  {
+    name: "Reality Sales",
+    data: get_rand_array(7, 10,40)
+  },
+  {
+    name: "Target Sales",
+    data: get_rand_array(7, 40,80)
+  }
+]
 export const chartsData = [
   {
     id: 1,
@@ -160,7 +173,7 @@ export const chartsData = [
     height: "100%",
     width: 600
   },
-   {
+  {
     id: 3,
     title: "customer satisfaction",
     type: "area",
@@ -194,9 +207,17 @@ export const chartsData = [
       },
       colors: [BLUE, CYAN],
       legend: {
+        fontSize: "15px",
       	markers: {
-      		shape:"square"
-	    }
+          size: 10,
+          customHTML: function(){
+              return `<svg style="position:relative;" width="23" height="9" viewBox="0 0 23 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2 4.5H21" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="11.5" cy="4.5" r="4.5" fill="currentColor"/>
+              </svg>
+              `
+          }
+  	    }
       },
       fill: {
           type: 'gradient',
@@ -211,5 +232,84 @@ export const chartsData = [
     },
     height: "100%",
     width: 400
+  },
+  {
+    id: 4,
+    title: "target vs reality",
+    type: "bar",
+    series: [
+      target_vs_reality[0],
+      target_vs_reality[1]
+    ],
+    options: {
+      chart: { 
+        zoom: { enabled: false }, 
+        toolbar:{ show: false }, 
+        fontFamily: "Poppins",
+
+      },
+      grid:{
+        show:false
+      },
+      dataLabels: { enabled: false },
+       xaxis: {
+        categories:months_half,
+        labels:{
+          style:{
+            fontSize: '10px'
+          }
+        }
+      },
+      yaxis: {
+        show: false
+      },
+      colors: [GREEN1, YELLOW],
+      legend: {
+        fontFamily: "Poppins",
+        fontWeight: 600,
+       fontSize: '15px',
+      },
+    },
+    height: "100%",
+    width: 400
+  },
+  {
+    id: 5,
+    title: "target vs reality",
+    type: "bar",
+    series: [
+      target_vs_reality[0],
+      target_vs_reality[1]
+    ],
+    options: {
+      chart: { 
+        zoom: { enabled: false }, 
+        toolbar:{ show: false }, 
+        fontFamily: "Poppins",
+      },
+      plotOptions: {
+        bar: {
+          horizontal: true
+        }
+      },
+      grid:{
+        show:false
+      },
+      dataLabels: { enabled: false },
+       xaxis: {
+        labels:{
+          show: false
+        }
+      },
+      yaxis: {
+        show: false
+      },
+      colors: [BLUE, CYAN, PURPLE, YELLOW],
+      legend: {
+        show: false
+      },
+    },
+    height: "100%",
+    width: 600
   },
 ]
