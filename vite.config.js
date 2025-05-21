@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-export const base = "/sales_dashboard/";
+const base = "/sales_dashboard/";
 export default defineConfig(({ mode }) => {
   return {
     base: mode === 'production' ? base : '/',

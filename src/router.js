@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import home from "./views/dashboardView.vue"
-import base from "../vite.config.js"
 
+const base = "/sales_dashboard/";
 const routes = [
   { path: `${base}/`, name: "dashboard", component: home },
   { path: `${base}/leaderboard`, name: "leaderboard", component: () => import("./views/leaderboardView.vue") },
