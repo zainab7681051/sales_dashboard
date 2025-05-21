@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-const base = "/sales_dashboard/";
+const base = '/sales_dashboard/';
 export default defineConfig(({ mode }) => {
   return {
     base: mode === 'production' ? base : '/',
-    publicDir: "./public",
+    publicDir: './public',
     server: {
       port: 2000,
       open: true,
@@ -17,14 +17,14 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       sourcemap: true,
-      target: 'es2015'
+      target: 'es2015',
     },
     resolve: {
       alias: {
-        "@": "/src"
+        '@': '/src',
       },
     },
     css: {},
     plugins: [vue()],
-  }
-})
+  };
+});

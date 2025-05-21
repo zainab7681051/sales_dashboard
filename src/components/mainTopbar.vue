@@ -1,8 +1,7 @@
 <script setup>
-import searchbar from "./searchbar.vue"
-import languages from "./languages.vue"
-import userMenu from "./userMenu.vue"
-
+  import searchbar from './searchbar.vue';
+  import languages from './languages.vue';
+  import userMenu from './userMenu.vue';
 </script>
 
 <template>
@@ -25,14 +24,14 @@ import userMenu from "./userMenu.vue"
 </template>
 
 <style lang="css" scoped>
-.topbar-container {
-  display: flex;
-  justify-content: space-around;
-}
+  .topbar-container {
+    display: flex;
+    justify-content: space-around;
+  }
 
-.main-title {
-  text-transform: capitalize;
-  font-size: 26px;
-  margin-right: 5px;
-}
+  .main-title {
+    text-transform: capitalize;
+    font-size: 26px;
+    margin-right: 5px;
+  }
 </style>
