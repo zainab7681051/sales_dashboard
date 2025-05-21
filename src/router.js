@@ -18,7 +18,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory('/sales_dashboard/'),
+  history: createWebHashHistory(),
   routes
 })
 
