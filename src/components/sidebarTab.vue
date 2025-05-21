@@ -14,7 +14,8 @@ defineProps({
 <style lang="css" scoped>
 .tab {
   display: flex;
-  padding: 12px 20px;
+  align-items: center;
+  padding: 10px 20px;
   text-decoration: none;
   color: var(--secondary);
   border-radius: 16px;
@@ -26,11 +27,11 @@ defineProps({
 }
 
 .tab-icon {
-  margin-right: 32px;
+  margin-right: 24px;
 }
 
 .tab-label {
-  font-size: 18px;
+  font-size: 12px;
 }
 
 .router-link-active.router-link-exact-active.tab {

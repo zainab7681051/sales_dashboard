@@ -1,5 +1,6 @@
 <script setup>
-import { reactive } from "vue"
+import { reactive, ref, onMounted } from "vue"
+let loading = ref(true)
 import titleComponent from "../components/titleComponent.vue"
 import exportIcon from "../assets/Export Icon.svg"
 import buttonComponent from "../components/buttonComponent.vue"
@@ -22,11 +23,15 @@ const handleExport = () => {
   return null
 }
 
-  const Data = reactive(chartsData)
+const Data = reactive(chartsData)
+
+onMounted(() => loading.value = true)
 </script>
 
 <template>
-  <div class="dashboard-container">
+  <div v-if="loading" class="loader"></div>
+
+  <div v-else class="dashboard-container">
     <div class="sales-summary">
       <div class="sales-summary-heading">
        <titleComponent :title="`today's sales`" :subtitle="`sales summary`"/>
@@ -60,8 +65,8 @@ const handleExport = () => {
   .dashboard-container{
     display: flex;
     flex-wrap: wrap;
-    gap: 21px;
-    padding: 48px 0 0 16px;
+    gap: 18px;
+    padding: 18px 0 0 0;
     text-transform: capitalize;
     align-items: baseline;
   }
@@ -69,7 +74,7 @@ const handleExport = () => {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
      padding: 32px;
      border-radius: 16px;
   }
@@ -85,8 +90,5 @@ const handleExport = () => {
     flex-wrap: wrap;
     margin-top: 10px;
   }
-/*  development*/
-  .dashboard-container{
-    flex-direction: column-reverse;
-  }
+
 </style>

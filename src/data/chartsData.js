@@ -192,7 +192,7 @@ export const chartsData = [
       
     },
     height: "100%",
-    width: 600
+    width: 520
   },
   {
     id: 3,
@@ -252,7 +252,7 @@ export const chartsData = [
         },
     },
     height: "100%",
-    width: 400
+    width: 280
   },
   {
     id: 4,
@@ -292,7 +292,7 @@ export const chartsData = [
       },
     },
     height: "100%",
-    width: 400
+    width: 300
   },
   {
     id: 5,
@@ -340,7 +340,7 @@ export const chartsData = [
       },
     },
     height: "100%",
-    width: 400
+    width: 320
   },
   {
     id: 6,
@@ -392,6 +392,6 @@ export const chartsData = [
       }
     },
     height: "100%",
-    width: 420
+    width: 400
   },
 ]

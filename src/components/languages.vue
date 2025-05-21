@@ -67,12 +67,13 @@ let isHovered = ref(false)
 .lang-container {
   position: relative;
   display: flex;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
 }
 
 .current_lang_container {
   display: flex;
+  align-items: center;
   padding: 10px;
 }
 
@@ -111,6 +112,7 @@ let isHovered = ref(false)
 
 .language {
   display: flex;
+  align-items: center;
   padding: 0 10px;
 }
 

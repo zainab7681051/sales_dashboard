@@ -3,11 +3,13 @@ import { reactive, ref } from "vue"
 import bellImg from "../assets/bell.svg"
 import downArrow from "../assets/arrow-down.svg"
 import userImg from "../assets/admin-photo.png"
+
 let userInfo = reactive({
   img: userImg,
   name: "Musfiq",
   role: "Admin"
 })
+
 </script>
 <template>
   <div class="menu-container">

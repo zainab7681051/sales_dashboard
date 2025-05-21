@@ -32,7 +32,7 @@ import userMenu from "./userMenu.vue"
 
 .main-title {
   text-transform: capitalize;
-  font-size: 32px;
+  font-size: 26px;
   margin-right: 5px;
 }
 </style>

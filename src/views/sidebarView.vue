@@ -34,7 +34,7 @@ const tabs = reactive([
 .sidebar-tabs-container{
     display: flex;
     flex-direction: column;
-    padding: 0px 8% 0 15%;
+/*    padding: 0px 8% 0 15%;*/
     gap:15px;
 }
 </style>

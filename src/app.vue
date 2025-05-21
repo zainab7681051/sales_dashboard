@@ -21,19 +21,22 @@ import mainTopbar from "./components/mainTopbar.vue"
 <style lang="css">
 .layout {
   display: grid;
-  grid-template-columns: 25% 1fr;
+  grid-template-columns: 14% 1fr;
   height: 100vh;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  position: relative;
+  
 }
 
 aside {
   display: flex;
   flex-direction: column;
-  padding: 20px 25px;
+  align-items: center;
+  padding: 20px 0px;
 }
 
 header {

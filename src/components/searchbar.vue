@@ -14,7 +14,7 @@ let isFocus = ref(false)
 <style lang="css">
 .searchbar {
   display: flex;
-  font-size: 18px;
+  font-size: 16px;
 }
 
 .query-field {
