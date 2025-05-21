@@ -25,7 +25,7 @@ const getCountryColor = (countryCode)=>{
   .map svg{
     width: 100%;
     height: 100%;
-    transform: translateX(-10%);
+    transform: translate(-10%, 10%);
   }
 </style>
 

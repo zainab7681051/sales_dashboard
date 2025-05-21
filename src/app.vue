@@ -29,7 +29,6 @@ main {
   display: flex;
   flex-direction: column;
   position: relative;
-  
 }
 
 aside {
@@ -41,5 +40,7 @@ aside {
 
 header {
   padding: 12px 5px;
+  position: relative;
+  z-index: 9;
 }
 </style>

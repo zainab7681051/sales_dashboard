@@ -19,7 +19,7 @@ defineProps({
   text-decoration: none;
   color: var(--secondary);
   border-radius: 16px;
-  transition: all .3s ease;
+  transition: all .15s ease;
 }
 
 .tab:hover {

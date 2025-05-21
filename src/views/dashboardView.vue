@@ -1,6 +1,28 @@
 <script setup>
-import { reactive, ref, onMounted } from "vue"
+import { reactive, ref, onMounted, onBeforeUnmount  } from "vue"
 let loading = ref(true)
+
+onMounted(() => {
+  document.addEventListener("visibilitychange", handleVisibilityChange)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener("visibilitychange", handleVisibilityChange)
+})
+const handleVisibilityChange = () => {
+  if (document.visibilityState === "visible") {
+    loading.value = true
+
+    setTimeout(() => {
+      loading.value = false
+    }, 500) 
+  }
+}
+loading.value = true
+setTimeout(() => {
+  loading.value = false
+}, 500)
+
 import titleComponent from "../components/titleComponent.vue"
 import exportIcon from "../assets/Export Icon.svg"
 import buttonComponent from "../components/buttonComponent.vue"
@@ -24,12 +46,10 @@ const handleExport = () => {
 }
 
 const Data = reactive(chartsData)
-
-onMounted(() => loading.value = true)
 </script>
 
 <template>
-  <div v-if="loading" class="loader"></div>
+  <div v-if="loading" class="loader" style="margin: auto auto;"></div>
 
   <div v-else class="dashboard-container">
     <div class="sales-summary">
