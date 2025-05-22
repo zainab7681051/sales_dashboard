@@ -6,7 +6,6 @@
 
   const countries = props.series[0].data;
   const colors = props.options.colors;
-console.log(countries)
   const getCountryColor = (countryCode) => {
     if (countries.includes(countryCode)) {
       //index is within range of colors array at all times through the modular operation

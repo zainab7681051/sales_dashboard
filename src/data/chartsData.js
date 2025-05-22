@@ -1,6 +1,6 @@
 import ovalBlue from '../assets/oval_blue.png';
 import ovalCyan from '../assets/oval_cyan.png';
-import {isoAlpha2CountryCodes} from "./ISOAlpha2Codes.js"
+import { isoAlpha2CountryCodes } from './ISOAlpha2Codes.js';
 
 const RED = '#F64E60';
 const GREEN = '#3CD856';
@@ -17,10 +17,10 @@ function get_rand_array(length, min, max) {
 function get_rand_index(length) {
   return get_rand_array(1, 0, length);
 }
-function get_random_country_code(){
- return isoAlpha2CountryCodes[get_rand_index(isoAlpha2CountryCodes.length-1)]
+function get_random_country_code() {
+  return isoAlpha2CountryCodes[get_rand_index(isoAlpha2CountryCodes.length - 1)];
 }
-function get_rand_countries (number) {
+function get_rand_countries(number) {
   let arr = new Array(number).fill(0);
   arr.forEach((a, i) => (arr[i] = get_random_country_code()));
   return arr;
@@ -97,12 +97,11 @@ const volume_services_level = [
   },
 ];
 
-
 const countries = [
   {
-    name:"sales mapping by country",
-    data: get_rand_countries(32)
-  }
+    name: 'sales mapping by country',
+    data: get_rand_countries(32),
+  },
 ];
 
 export const chartsData = [
