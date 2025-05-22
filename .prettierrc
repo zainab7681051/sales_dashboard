@@ -5,6 +5,7 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "bracketSpacing": true,
+  "arrowParens": "always",
   "vueIndentScriptAndStyle": true,
   "htmlWhitespaceSensitivity": "ignore",
   "bracketSameLine": false,

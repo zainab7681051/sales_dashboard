@@ -1,5 +1,6 @@
 import ovalBlue from '../assets/oval_blue.png';
 import ovalCyan from '../assets/oval_cyan.png';
+import {isoAlpha2CountryCodes} from "./ISOAlpha2Codes.js"
 
 const RED = '#F64E60';
 const GREEN = '#3CD856';
@@ -13,18 +14,18 @@ const YELLOW = '#FFA412';
 function get_rand_array(length, min, max) {
   return Array.from({ length }, () => Math.floor(Math.random() * (max - min) + min));
 }
-function get_rand_letter(length) {
+function get_rand_index(length) {
   return get_rand_array(1, 0, length);
 }
-
-function get_ISO_alpha2_code(cap_letters_array) {
-  return (
-    cap_letters_array[get_rand_letter(cap_letters_array.length)] +
-    cap_letters_array[get_rand_letter(cap_letters_array.length)]
-  );
+function get_random_country_code(){
+ return isoAlpha2CountryCodes[get_rand_index(isoAlpha2CountryCodes.length-1)]
 }
-//
-const capitalLetters = Array.from({ length: 26 }, (_, i) => String.fromCharCode(65 + i));
+function get_rand_countries (number) {
+  let arr = new Array(number).fill(0);
+  arr.forEach((a, i) => (arr[i] = get_random_country_code()));
+  return arr;
+}
+///////////////////////////////////////////////////////////////////////////
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 const week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 const months_half = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
@@ -96,13 +97,13 @@ const volume_services_level = [
   },
 ];
 
-// self-calling function that returns a random array of 5 ISO-alpha2 country codes
-// const countries = ((number)=>{
-//   let arr=new Array(number).fill(0);
-//   arr.forEach((a,i)=> arr[i]=get_ISO_alpha2_code(capitalLetters))
-//   return arr
-// })(5)
-const countries = ['US', 'BR', 'SA', 'ID', 'CN', 'CD'];
+
+const countries = [
+  {
+    name:"sales mapping by country",
+    data: get_rand_countries(32)
+  }
+];
 
 export const chartsData = [
   {
